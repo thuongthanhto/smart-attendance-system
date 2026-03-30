@@ -1,0 +1,26 @@
+{
+  "name": "smart-attendance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smart Attendance System - HDBank",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "api:dev": "npm run start:dev -w apps/api",
+    "web:dev": "npm run dev -w apps/web",
+    "build:shared": "npm run build -w packages/shared",
+    "build:api": "npm run build -w apps/api",
+    "build:web": "npm run build -w apps/web",
+    "test": "npm test -w packages/shared && npm test -w apps/api && npm test -w apps/web",
+    "test:shared": "npm test -w packages/shared",
+    "test:api": "npm test -w apps/api",
+    "test:web": "npm test -w apps/web",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"**/*.{ts,tsx,json}\""
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
