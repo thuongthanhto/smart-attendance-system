@@ -1,8 +1,11 @@
 import axios from 'axios';
+import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+const DEV_HOST = Platform.OS === 'android' ? '10.0.2.2' : 'localhost';
+
 const API_BASE_URL = __DEV__
-  ? 'http://10.0.2.2:3000/api' // Android emulator -> host machine
+  ? `http://${DEV_HOST}:3000/api`
   : 'https://api.smartattendance.hdbank.com.vn/api';
 
 const api = axios.create({

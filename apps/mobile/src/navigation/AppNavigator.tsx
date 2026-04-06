@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useAuthStore } from '../stores/auth.store';
 import { ActivityIndicator, View } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import LoginScreen from '../screens/LoginScreen';
 import CheckInScreen from '../screens/CheckInScreen';
@@ -12,15 +13,26 @@ import ProfileScreen from '../screens/ProfileScreen';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+const TAB_ICONS: Record<string, { focused: string; default: string }> = {
+  CheckIn: { focused: 'fingerprint', default: 'fingerprint' },
+  History: { focused: 'clock-check', default: 'clock-check-outline' },
+  Profile: { focused: 'account-circle', default: 'account-circle-outline' },
+};
+
 function MainTabs() {
   return (
     <Tab.Navigator
-      screenOptions={{
+      screenOptions={({ route }) => ({
         headerShown: true,
         tabBarActiveTintColor: '#2563EB',
         tabBarInactiveTintColor: '#9CA3AF',
         tabBarLabelStyle: { fontSize: 12, fontWeight: '600' },
-      }}
+        tabBarIcon: ({ color, size, focused }) => {
+          const icons = TAB_ICONS[route.name];
+          const iconName = focused ? icons.focused : icons.default;
+          return <Icon name={iconName} size={size} color={color} />;
+        },
+      })}
     >
       <Tab.Screen
         name="CheckIn"

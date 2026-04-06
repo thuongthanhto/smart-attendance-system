@@ -1,0 +1,6 @@
+module Pods_SmartAttendance_SmartAttendanceTests {
+  umbrella header "Pods-SmartAttendance-SmartAttendanceTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

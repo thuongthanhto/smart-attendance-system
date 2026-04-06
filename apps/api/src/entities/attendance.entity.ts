@@ -43,16 +43,16 @@ export class Attendance {
   @Column({ name: 'distance_m', type: 'double precision', nullable: true })
   distanceM: number | null;
 
-  @Column({ length: 17, nullable: true })
+  @Column({ type: 'varchar', length: 17, nullable: true })
   bssid: string | null;
 
-  @Column({ name: 'device_id', length: 255, nullable: true })
+  @Column({ name: 'device_id', type: 'varchar', length: 255, nullable: true })
   deviceId: string | null;
 
   @Column({ name: 'user_agent', type: 'text', nullable: true })
   userAgent: string | null;
 
-  @Column({ name: 'ip_address', length: 45, nullable: true })
+  @Column({ name: 'ip_address', type: 'varchar', length: 45, nullable: true })
   ipAddress: string | null;
 
   @CreateDateColumn({ name: 'created_at' })

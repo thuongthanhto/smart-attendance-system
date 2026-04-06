@@ -38,7 +38,7 @@ export class User {
   @Column({ name: 'department_id', type: 'uuid', nullable: true })
   departmentId: string | null;
 
-  @Column({ name: 'device_id', length: 255, nullable: true })
+  @Column({ name: 'device_id', type: 'varchar', length: 255, nullable: true })
   deviceId: string | null;
 
   @Column({ name: 'is_active', default: true })

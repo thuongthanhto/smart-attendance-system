@@ -1,0 +1,27 @@
+{
+  "name": "RNWifi",
+  "version": "4.13.6",
+  "summary": "A react-native implementation for viewing and connecting to Wifi networks on Android and iOS devices.",
+  "description": "A react-native implementation for viewing and connecting to Wifi networks on Android and iOS devices.",
+  "license": "ISC",
+  "authors": "",
+  "homepage": "https://github.com/JuanSeBestia/react-native-wifi-reborn#readme",
+  "source": {
+    "git": "https://github.com/JuanSeBestia/react-native-wifi-reborn",
+    "tag": "v4.13.6"
+  },
+  "requires_arc": true,
+  "platforms": {
+    "ios": "9.0"
+  },
+  "preserve_paths": [
+    "LICENSE",
+    "README.md",
+    "package.json",
+    "index.js"
+  ],
+  "source_files": "ios/*.{h,m,swift}",
+  "dependencies": {
+    "React-Core": []
+  }
+}
